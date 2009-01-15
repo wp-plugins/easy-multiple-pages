@@ -19,4 +19,4 @@ This plugins adds an button in the post editor that allows you to easily split p
 
 == Screenshots ==
 
-This plugins adds an button in the post editor that allows you to easily split post by pages and also adds link to pages in the post automaticly.
+1. Editor button
