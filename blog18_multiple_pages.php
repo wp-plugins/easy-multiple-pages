@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Pagini Multiple
+Plugin Name: Easy multiple pages
 Plugin URI: http://www.blog18.ro
 Description: This plugins adds an button in the post editor that allows you to easily split post by pages and also adds link to pages in the post automaticly.
 Version: 0.1
@@ -31,10 +31,10 @@ echo <<<b18
 	if (toolbar) {
 		var theButton = document.createElement('input');
 		theButton.type = 'button';
-		theButton.value = 'Pagina urmatoare';
+		theButton.value = 'Next Page';
 		theButton.onclick = b18_nextpage_handler;
 		theButton.className = 'ed_button';
-		theButton.title = "Imparte continutul pe mai multe pagini.";
+		theButton.title = "Splits the content by pages.";
 		theButton.id = "ed_paginaurmatoare";
 		toolbar.appendChild(theButton);
 	}
@@ -54,7 +54,7 @@ add_filter('the_content', 'b18_nextpage_show',1);
 function b18_nextpage_show($content) {
 	global $wpdb, $post;
 	if (is_single())
-		return $content.wp_link_pages(array("before" => "<p>Pagini:", "echo" => 0));
+		return $content.wp_link_pages(array("before" => "<p>Pages:", "echo" => 0));
 	else
 		return $content;
 }
