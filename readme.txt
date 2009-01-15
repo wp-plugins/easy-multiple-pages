@@ -17,10 +17,6 @@ This plugins adds an button in the post editor that allows you to easily split p
 1. Upload `blog18_multiple_pages.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-== Frequently Asked Questions ==
-
-This plugins adds an button in the post editor that allows you to easily split post by pages and also adds link to pages in the post automaticly.
-
 == Screenshots ==
 
 This plugins adds an button in the post editor that allows you to easily split post by pages and also adds link to pages in the post automaticly.
