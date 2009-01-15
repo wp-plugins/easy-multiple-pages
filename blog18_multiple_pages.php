@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Easy multiple pages
+Plugin Name: Pagini Multiple
 Plugin URI: http://www.blog18.ro
 Description: This plugins adds an button in the post editor that allows you to easily split post by pages and also adds link to pages in the post automaticly.
-Version: 0.1
+Version: 0.2
 Author: Filip Pacurar
 Author URI: http://www.filipac.net
 */
@@ -23,6 +23,7 @@ Author URI: http://www.filipac.net
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+$singleonly = 0;
 function b18_nextpage_add() {
 	if (strpos($_SERVER['REQUEST_URI'], 'post-new.php') || strpos($_SERVER['REQUEST_URI'], 'page-new.php')) {
 echo <<<b18
@@ -31,10 +32,10 @@ echo <<<b18
 	if (toolbar) {
 		var theButton = document.createElement('input');
 		theButton.type = 'button';
-		theButton.value = 'Next Page';
+		theButton.value = 'Pagina urmatoare';
 		theButton.onclick = b18_nextpage_handler;
 		theButton.className = 'ed_button';
-		theButton.title = "Splits the content by pages.";
+		theButton.title = "Imparte continutul pe mai multe pagini.";
 		theButton.id = "ed_paginaurmatoare";
 		toolbar.appendChild(theButton);
 	}
@@ -53,8 +54,12 @@ add_filter('admin_footer', 'b18_nextpage_add');
 add_filter('the_content', 'b18_nextpage_show',1);
 function b18_nextpage_show($content) {
 	global $wpdb, $post;
+	if($singleonly){
 	if (is_single())
-		return $content.wp_link_pages(array("before" => "<p>Pages:", "echo" => 0));
+		return $content.wp_link_pages(array("before" => "<p>Pagini:", "echo" => 0));
+		}elseif(!$singleonly){
+		return $content.wp_link_pages(array("before" => "<p>Pagini:", "echo" => 0));
+		}
 	else
 		return $content;
 }
