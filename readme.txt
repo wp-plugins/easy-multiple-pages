@@ -4,7 +4,7 @@ Donate link: http://www.blog18.ro
 Tags: post, multiple, pages, split
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: 0.2
+Stable tag: 0.3
 
 This plugins adds an button in the post editor that allows you to easily split post by pages and also adds link to pages in the post automaticly.
 
